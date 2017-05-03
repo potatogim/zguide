@@ -2,9 +2,9 @@
 // Binds PUSH socket to tcp://localhost:5557
 // Sends batch of tasks to workers via that socket.
 
-var zmq = require('zmq');
+var zmq = require('zeromq');
 process.stdin.resume();
-require('tty').setRawMode(true);
+process.stdin.setRawMode(true);
 
 // Socket to send messages on
 var sender = zmq.socket('push');
